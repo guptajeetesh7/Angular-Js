@@ -5,7 +5,7 @@ app.config(function($routeProvider ) {
     $routeProvider
     
     .when('/', {
-        templateUrl : "login.html"
+        templateUrl : "index.html"
     })
     .when('/dashboard', {
     	
@@ -34,6 +34,7 @@ app.controller('loginCtrl',function($scope , $location ,$rootScope){
 	{
 	     $rootScope.loggedIn=true;	
 		$location.path('/dashboard');
+		alert("Directing you");
 	}
 	else{
 		alert("Wrong account");

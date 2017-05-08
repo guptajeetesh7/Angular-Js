@@ -2,13 +2,83 @@
 <html>
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-route.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <script src="angular.js"></script>
 
 <body ng-app="myApp">
-<a href="#/dashboard">Click me</a>
+<nav class="navbar navbar-inverse navbar-fixed-top" >
+     
+      <div class="container">
+      <div class="navbar-header">
+        <a class="navbar-brand" id="head" href="https://www.google.co.in/?gfe_rd=cr&ei=lg4QWeTiEsuL8QeWl5mgBw">FOSSASIA WEB DEVELOPERS</a>
+        </div>
 
-<div ng-view></div>
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="navbar-collapse">
+        <span class="sr-only">Toggle Navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
 
+        </button>
+        
+        <div class="navbar-collapse collapse" >
+          <ul class="nav navbar-nav navbar-left">
+            <li class="active" ><a href="www.github.com" > HOME </a></li>
+            <li><a href="#"  data-target="#mymodal" data-toggle="modal">ABOUT</a></li>
+
+            <li class="dropdown">
+            <a href="@" class="dropdown-toggle"  data-toggle="dropdown">LEARN <b class="caret"></b></a>
+           
+           <ul class="dropdown-menu">
+              <li class="dropdown-header">Examples</li>
+              <li> <a href="@">C++</a></li>
+              <li><a href="#">JAVA</a></li>
+               <li class="dropdown-header">Examples</li>
+              <li> <a href="@">C++</a></li>
+              <li><a href="#">JAVA</a></li>
+              
+            </ul>
+              
+            </li>
+            
+          </ul >
+
+          <form class="navbar-form navbar-right" ng-controller="loginCtrl">
+
+          <span class="glyphicon glyphicon-user"> </span>
+      
+        <input type="text" class="form-control" placeholder="Username" ng-model="username">
+
+       <span class="glyphicon glyphicon-log-in"> </span>
+        <input type="password" class="form-control" placeholder="Password" ng-model="password">
+        <button type="button" class="btn btn-success " ng-click="submit()">Log in</button>
+      
+
+
+          
+    </form>
+
+                   		
+          	
+          
+        </div>
+      
+        
+      </div>
+
+   </nav>
+
+   <div class="jumbotron text-center">
+<div class="container">
+  
+  <h1>FOSSASIA 2017</h1>
+  
+  </div>
+</div>
+
+<div class="row" ng-view>
+	
+</div>
 
 </body>
 </html>
