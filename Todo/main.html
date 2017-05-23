@@ -1,0 +1,62 @@
+<!DOCTYPE HTML>
+<!DOCTYPE html>
+<html>
+<head>
+	<title>To-do App</title>
+	
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+  
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script type="text/javascript "  src="angular.js"></script>
+
+    <style >
+    	
+    .done-true{
+    	color: grey;
+    	font-style: italic;
+    	text-decoration: line-through;
+    }
+
+    span[contentEditable="true"]{
+
+    	background: grey;
+    	font-style: italic;
+    	padding: 3px;
+    }
+
+    </style>
+
+
+
+
+</head>
+<body ng-app="myApp" ng-controller="todo">
+
+<h1 style="text-align: center;"> TO-DO APP </h1>
+
+ <div class="container-fluid" style="text-align: center;">
+ 	<h3>Enter The Task :</h3><input type="text" name="task" style="width: 200px;" ng-model="task" ng-keyup="submit()">
+
+ 	
+ </div>
+ 
+ <div class="container-fluid" >
+
+ 	<ul>
+ 		<li ng-repeat = "Onetask in Tasks"> 
+
+ 		<input type="checkbox" name="status" ng-model="Onetask.status"  style="margin-right: 10px;">
+ 			<span class="done-{{Onetask.status}}"  ng-dblclick="contentedit()"  contentEditable="false" ng-keyup="enterAgain(Onetask.taskMessage)">{{Onetask.taskMessage}} </span>
+ 		</li>
+ 	</ul>
+
+ 	
+ </div>
+
+
+
+
+</body>
+</html>
