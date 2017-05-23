@@ -45,14 +45,20 @@
  <div class="container-fluid" >
 
  	<ul>
- 		<li ng-repeat = "Onetask in Tasks"> 
+ 		<li ng-repeat = "Onetask in Tasks track by $index"> 
 
  		<input type="checkbox" name="status" ng-model="Onetask.status"  style="margin-right: 10px;">
- 			<span class="done-{{Onetask.status}}"  ng-dblclick="contentedit()"  contentEditable="false" ng-keyup="enterAgain(Onetask.taskMessage)">{{Onetask.taskMessage}} </span>
+ 			<span class="done-{{Onetask.status}}"  ng-dblclick="contentedit(Onetask.taskMessage)"  contentEditable="false" ng-keyup="enterAgain(Onetask.taskMessage)">{{Onetask.taskMessage}} </span>
  		</li>
  	</ul>
 
+
  	
+ </div>
+
+ <div class="container-fluid">
+
+ 	<button class="btn btn-danger" ng-click="clear()">Clear the data</button>	
  </div>
 
 
