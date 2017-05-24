@@ -23,14 +23,24 @@ classApp.controller('weatherCtrl',function($scope ,$http){
 
 		var apiKey = "c242d2031036ff05b3bd8559f91e2449";
 
-		var openWeatherUrl ="api.openweathermap.org/data/2.5/weather?lat="+ $scope.lat + "&lon="+ $scope.lon +"&appid=" + apiKey ;
+		console.log("http://ip-api.com/json");
+
+		var openWeatherUrl ="api.openweathermap.org/data/2.5/weather?lat="+ $scope.lat + "&lon="+ $scope.lon +"&appid=" + apiKey  ;
 
 		$http.get(openWeatherUrl).success(function(data){
 
-			console.log(data.weather[0].description);
+			$scope.description = data.weather[0].description;
+			$scope.speed = (2.237*data.wind.speed).toFixed(1) + "mph";
+			$scope.name = data.name;
+			$scope.temp = data.main.temp;
+			
+
+			
 		});
 
 	});
 
 
 });
+
+
