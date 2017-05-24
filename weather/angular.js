@@ -44,7 +44,94 @@ classApp.controller('weatherCtrl',function($scope ,$http){
 
 			$scope.icon = "http://openweathermap.org/img/w/" + data.weather[0].icon +".png";
 
+ 			switch($scope.description){
 
+ 				case "clear sky" : {
+ 										$scope.weatherBackground = {
+
+ 											"background" : "url(img/clearsky.jpg)",
+ 											"background-size" : 'cover'
+ 										};
+ 									} break;
+
+ 				case "few clouds" : {
+ 										$scope.weatherBackground = {
+
+ 											"background" : "url(img/fewclouds.jpg)",
+ 											"background-size" : 'cover'
+ 										};
+ 									} break;
+
+ 				case "mist" : {
+ 										$scope.weatherBackground = {
+
+ 											"background" : "url(img/mist.jpg)",
+ 											"background-size" : 'cover'
+ 										};
+ 									} break;
+ 									
+ 				case "rain" : {
+ 										$scope.weatherBackground = {
+
+ 											"background" : "url(img/rain.jpg)",
+ 											"background-size" : 'cover'
+ 										};
+ 									} break;
+
+ 				case "broken clouds" : {
+ 										$scope.weatherBackground = {
+
+ 											"background" : "url(img/brokenclouds.jpg)",
+ 											"background-size" : 'cover'
+ 										};
+ 									} break;					
+
+ 				case "scattered clouds" : {
+ 										$scope.weatherBackground = {
+
+ 											"background" : "url(img/scatteredclouds.jpg)",
+ 											"background-size" : 'cover'
+ 										};
+ 									} break;			
+
+ 				case "snower rain" : {
+ 										$scope.weatherBackground = {
+
+ 											"background" : "url(img/snowerrain.jpg)",
+ 											"background-size" : 'cover'
+ 										};
+ 									} break;
+
+ 				case "snow" : {
+ 										$scope.weatherBackground = {
+
+ 											"background" : "url(img/snow.jpg)",
+ 											"background-size" : 'cover'
+ 										};
+ 									} break;	
+
+
+ 				case "thunderstorm" : {
+ 										$scope.weatherBackground = {
+
+ 											"background" : "url(img/thunderstorm.jpg)",
+ 											"background-size" : 'cover'
+ 										};
+ 									} break;																
+
+
+
+
+ 				default : 		{
+ 										$scope.weatherBackground = {
+
+ 											"background" : "url(img/default.jpg)",
+ 											"background-size" : 'cover'
+ 										};
+ 									} break;			
+
+
+ 			}
 
 			
 		});
