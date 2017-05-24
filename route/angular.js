@@ -31,6 +31,8 @@ app.config(function($routeProvider ) {
 
 app.controller('loginCtrl',function($scope , $location ,$rootScope){
 
+        $scope.test=44;
+
 	 $scope.submit=function(){
 
 	if($scope.username== "admin" && $scope.password=="admin")
