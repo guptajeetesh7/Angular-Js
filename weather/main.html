@@ -8,12 +8,39 @@
    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
    <script type="text/javascript "  src="angular.js"></script>
 	<title>Open Weather</title>
-</head>
-<body  ng-app="weatherApp"  ng-controller="weatherCtrl">
 
- {{channelInfo.heading}}
- {{channelInfo.subheading1}}
- {{channelInfo.subheading2.name}}
+	<style >
+		.info{
+			font-family: 'Montserrat'
+		}
+
+		.btn-lg{
+			margin: 5px;
+		}
+
+	</style>
+</head>
+<body  ng-app="weatherApp"  ng-controller="weatherCtrl" class="text-center info">
+
+ <h1>{{channelInfo.heading}}</h1>
+ <h2>{{channelInfo.subheading1}}</h2>
+ <h3>{{channelInfo.subheading2.name}}</h3>
+
+ <a class="btn-lg btn-primary">{{description | uppercase}}  <img ng-src="{{icon}}"></a>
+
+ <a class="btn-lg btn-primary">{{speed | uppercase}}</a>
+ 
+ <a class="btn-lg btn-primary">{{name | uppercase}}</a>
+
+ <a class="btn-lg btn-primary" ng-init="tempval=true"  ng-show="tempval"
+ ng-click="tempval=!tempval">{{cTemp}}</a>
+ 
+ <a class="btn-lg btn-primary" ng-show="!tempval" ng-click="tempval=!tempval" >{{fTemp}}</a>
+
+ 
+
+
+ <div ng-view> </div>
 </body>
 </html>
 
